@@ -29,7 +29,7 @@ class TasksController < ApplicationController
         # check whether the task is valid => valid
         if task.valid?
             # add the tasks to the db if its valid
-            render json: task, status: accepted
+            render json: task, status: :accepted
         else
             # throw an unprocessable entity error the user
             render json: {errors: "An error occured. Please try again"}

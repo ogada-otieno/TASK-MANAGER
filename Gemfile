@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'pg'
 
+gem 'rack-cors'
+
 gem 'jwt'
 
 gem 'bcrypt', '~> 3.1.7'
