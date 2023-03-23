@@ -16,3 +16,5 @@ TASKS TO COMPLETE
         -> have an edit fot any given task
     -> a page to filter all complete and incomplete tasks
     -> logout functionality
+
+2. Make sure to add the 

@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { login } from "../services/webApis";
+import { useNavigate } from "react-router-dom";
 
 export const useLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate()
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -17,11 +19,13 @@ export const useLogin = () => {
     // hit the endpoint
     try {
         const response = await login(loginPayload)
-
-        console.log(response)
         // destructure the user & token
-        // set the user and token to the localstorage 
+        const {data: {token, user}} = response;
+        // set the user and token to the localstorage
+        localStorage.setItem("token", token)
+        localStorage.setItem("user", JSON.stringify(user))
         // redirect the user to the protected page
+        navigate('/')
     } catch (error) {
         console.log(error)
     }
