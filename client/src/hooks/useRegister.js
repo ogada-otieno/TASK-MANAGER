@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { register } from "../services/webApis";
 import { useNavigate } from "react-router-dom";
 
